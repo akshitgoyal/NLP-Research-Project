@@ -1,34 +1,55 @@
-Srinivas Aluru
-Chengxiang Zhai
-Chris Jermaine
-Xintao Wu
-Li Xiong
-Prof. Wei-Shinn Ku
-Prof. Carlos Ordonez 
-Prof. San-Woo Jun 
-Prof. Jia Zou 
-Prof. Yannis Velegrakis 
-Prof. Masatoshi Yoshikawa 
-Prof. Prasenjit Mitra 
-Prof. Chandan Reddy 
-Prof. Murat Kantarcioglu 
-Prof. Anna Squicciarini 
-Prof. Spyro Blanas
-Prof. Kai Chen
-Prof. Xiaoqian Jiang 
-Prof. Huzefa Rangwala 
-Olivera Kotevska
-Siyuan Lu
-Weija Xu
-Eyhab Ai-Masri
-Zhiyuan Chen
-Jeff Saltz
-Rafal A. Angryk
-Hui Zhang
-Yicheng Tu
-Xingquan Zhu
-Dr. Erin-Elizabeth A. Durham
-Xiaohua Tony Hu
-Yubao Wu
-Berkay Aydin
-Xiaohua Tony Hu
+Dr. Roger Barga 
+Prof Carlo Zaniolo 
+Dr. Chaitanya Baru 
+Dr. Jun (Luke) Huan 
+Prof. Latifur Khan 
+Prof. Jingrui He 
+Prof. Wenqing Hu 
+Prof. Hanghang Tong 
+Dr. Yinglong Xia 
+Prof. Christopher Jermaine 
+Prof. Yongluan Zhou 
+Prof. Quanquan Gu 
+Prof. Aditya Prakash 
+Prof. Dongwon Lee 
+Prof. Julia Stoyanovich 
+Prof. Sang-Woo Jun
+Prof. Harry Xu
+Prof. Xia Ning 
+Prof. Tim Weninger 
+Dr. Ronay Ak 
+Dr. Yuanyuan Tian 
+Prof. Kisung Lee 
+Prof. Yanfang Fanny Ye 
+Prof. Xia (Ben) Hu 
+Prof. Chen Li 
+Prof. Jeffrey Saltz 
+Prof. Yicheng Tu 
+Prof. Anna Cinzia  Squicciarini 
+Dr. Haoyi Xiong 
+Prof. Sihong Xie 
+Dr. Lingfei Wu 
+Prof. Xiaohua Tony Hu 
+Dr. Salloum Mariam 
+Dr.  Wei Ye 
+Prof. Yuan An 
+Prof. Ruoming Jing 
+Prof. Amr Magdy 
+Prof. Weimao Ke 
+Dr. Christine Kirkpatrick 
+Prof. Jianwu Wang 
+Dr. Amr Awadallah 
+Dr. Xueqi Cheng 
+Prof. Yi-ke Guo 
+Prof. Xiaohua Tony Hu (Chair) (
+) 
+Prof. Jimmy Lin 
+Dr. Raghunath Nambiar 
+Prof. Jian Pei 
+Prof. Vijay Raghavan 
+Prof. Amit Sheth 
+Prof. Matthew Smith 
+Dr. Shusaku Tsumoto 
+Prof. Athanasios Vasilakos 
+Pro. Wei Wang 
+Prof. Qiang Yang 
