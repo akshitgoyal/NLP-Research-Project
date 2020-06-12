@@ -33,4 +33,5 @@ The crawler can be used as a sample and can be tweaked easily to crawl different
 Another possible extension to this specific project could be extracting data in a different domain in big data conferences.
 
 
-
+# License Information
+This repository has a general MIT License with some addtional conditons. Please review the license before using any segments of the repository. 
