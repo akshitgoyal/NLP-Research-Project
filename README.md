@@ -11,7 +11,7 @@ Currently, the software uses only one spider and works perfectly in extracting t
 
 The results of the crawler are also present in the directory as csv files.
 
-All the major code is located in `spyders` folder. The other files are irrelevant to this project and can be used to extend the code if required to integrate with a specific application.
+All the major code is located in `spiders` folder. The other files are irrelevant to this project and can be used to extend the code if required to integrate with a specific application.
 
 # How to install
 
