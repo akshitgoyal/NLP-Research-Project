@@ -11,6 +11,8 @@ Currently, the software uses only one spider and works perfectly in extracting t
 
 The results of the crawler are also present in the directory as csv files.
 
+All the major code is located in `spyders` folder. The other files are irrelevant to this project and can be used to extend the code if required to integrate with a specific application.
+
 # How to install
 
 `Pre-requisites`: Python3.0 or higher must be installed in your computer and included in the $PATH.
