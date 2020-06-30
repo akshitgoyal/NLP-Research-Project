@@ -26,10 +26,10 @@ For more details on installing scrapy, you can visit the official documentation 
 
 Simply navigate to project folder in your command line and make a call to the spider.  Note that we only have one spyder implemented called `people`
 
-You can execute it by the command: `scrapy crawl people`
+You can execute it by the command: `scrapy crawl people` in your command line.
 
 # Extend the code
-The crawler can be used as a sample and can be tweaked easily to crawl different pages depending on the requirements. Specifically, for this project we can include another spyder to crawl the confernce years of 2013 and 2014 for the current domain.
+The crawler can be used as a sample and can be tweaked easily to crawl different pages depending on the requirements. Specifically, for this project we can include another spyder to crawl the confernce years of 2013 and 2014 for the current domain. Also, we can  extract the location and institution names for these individuals.
 Another possible extension to this specific project could be extracting data in a different domain in big data conferences.
 
 
