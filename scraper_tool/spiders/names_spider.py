@@ -1,6 +1,7 @@
 import scrapy
 import csv
 import os
+import re
 
 
 class namesSpider(scrapy.Spider):
@@ -30,6 +31,7 @@ class namesSpider(scrapy.Spider):
         parser methods depending on the type of information we want.
         """
         links = response.xpath("//a")
+        os.mkdir(os.path.join(os.getcwd(),re.sub(r"\s", "", response.xpath("//title/text()").extract_first())))
         for link in links:
             page_name = link.xpath("text()").extract_first()
             if "organization committee" in page_name.lower():
@@ -72,8 +74,10 @@ class namesSpider(scrapy.Spider):
                         names.append(n1.split(':')[0].strip())
                     else:
                         names.append(n1.split(',')[0].strip())
+        # file_name = os.getcwd()+"/"+response.xpath("//title/text()").extract_first() + "/committee.csv"
+        file_name = os.path.join(os.getcwd(),re.sub(r"\s", "", response.xpath("//title/text()").extract_first()), "committee.csv")
 
-        file_name = response.xpath("//title/text()").extract_first() + ".csv"
+        # file_name = response.xpath("//title/text()").extract_first() + ".csv"
         if os.path.isfile(file_name):
             mode = 'a+'
         else:
@@ -91,7 +95,10 @@ class namesSpider(scrapy.Spider):
         committee page.
         """
         details = response.xpath("//tr/th")
-        file_name = response.xpath("//title/text()").extract_first() + ".csv"
+        # file_name = os.getcwd()+"/"+response.xpath("//title/text()").extract_first() + "/program.csv"
+        file_name = os.path.join(os.getcwd(),re.sub(r"\s", "", response.xpath("//title/text()").extract_first()), "program.csv")
+
+        # file_name = response.xpath("//title/text()").extract_first() + ".csv"
         if os.path.isfile(file_name):
             mode = 'a+'
         else:
@@ -109,7 +116,9 @@ class namesSpider(scrapy.Spider):
          speakers page.
         """
         speaker_info = response.xpath("//tr/td/div/p/strong")
-        file_name = response.xpath("//title/text()").extract_first() + ".csv"
+        # file_name = response.xpath("//title/text()").extract_first() + ".csv"
+        file_name = os.path.join(os.getcwd(),re.sub(r"\s", "", response.xpath("//title/text()").extract_first()), "speakers.csv")
+
         if os.path.isfile(file_name):
             mode = 'a+'
         else:
