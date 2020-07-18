@@ -19,6 +19,14 @@ api_instance = openapi_client.PersonalApi(
 
 
 def generate_namsor_data():
+    """
+    This function calls NamSor API and extracts the required information about
+    gender and ethnicity. The produced results are put into csv files and used
+    for analysis using various statsmodel, pandas and numpy library. Other details
+    can be found in the pdf report.
+
+    """
+    # Loading the cached data
     if os.path.isfile("extracted.pkl"):
         file = open('extracted.pkl', 'rb')
         names_dict = pickle.load(file)
@@ -28,7 +36,11 @@ def generate_namsor_data():
     year_num = 0
     for year in ["2016", "2017", "2018", "2019", "2020"]:
         reader = csv.reader(open(year + '.csv'))
+
+        # Initializing the counters
         population, male, female, other_gender, A, B_NL, HL, W_NL = 0, 0, 0, 0, 0, 0, 0, 0
+
+        # We need to setup 5 batches to make batch request to Namsor API.
         batch1 = openapi_client.BatchFirstLastNameIn()
         batch1.personal_names = []
         batch2 = openapi_client.BatchFirstLastNameIn()
@@ -39,14 +51,14 @@ def generate_namsor_data():
         batch4.personal_names = []
         batch5 = openapi_client.BatchFirstLastNameIn()
         batch5.personal_names = []
+
         for fullname in reader:
             first_name, last_name = extract_name(fullname)
             if first_name is not None:
                 new_fullname = first_name + " " + last_name
                 if new_fullname not in names_dict.keys():
                     name = openapi_client.FirstLastNameIn()
-                    # Gender, Ethnicity, Location
-                    names_dict[new_fullname] = [None, None, None]
+                    names_dict[new_fullname] = [None, None]  # Gender, Ethnicity
                     name.first_name = first_name
                     name.last_name = last_name
                     if population < 100:
@@ -59,13 +71,15 @@ def generate_namsor_data():
                         batch4.personal_names.append(name)
                     elif 400 <= population < 500:
                         batch5.personal_names.append(name)
-
                 else:
                     if names_dict[new_fullname][0] == 'male':
                         male += 1
                     else:
                         female += 1
+
                 population += 1  # Count the number of participants.
+
+        # API call for gender.
         for batch in [batch1, batch2, batch3, batch4, batch5]:
             try:
                 api_response = api_instance.gender_batch(
@@ -82,6 +96,7 @@ def generate_namsor_data():
                 print(
                     "Exception when calling PersonalApi->gender_batch: %s\n" % e)
 
+            # API call for race ethnicity.
             try:
                 api_response2 = api_instance.us_race_ethnicity_batch(
                     batch_first_last_name_geo_in=batch)
@@ -114,6 +129,8 @@ def generate_namsor_data():
         writer = csv.writer(open("ethnicity_data.csv", 'a+'))
         writer.writerow([year_num, A, B_NL, HL, W_NL])
         year_num += 1
+
+    # Caching the extracted data.
     f = open("extracted.pkl", "wb")
     pickle.dump(names_dict, f)
     f.close()
