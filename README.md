@@ -11,7 +11,7 @@ is then exported to a csv file named after the conference. The extracted data fr
 
 Currently, the software uses only two spider and works perfectly in extracting the names of the people from the domain: __`bigdataieee.org`(http://bigdataieee.org/BigData2020/) for the years 2015-2020 and `fitc.ca` (https://fitc.ca/events/speakers/) for the years 2002-2019.__ The results of the crawler are present in `/data_mining/sample_output`. This component of software itself can be located in `/data_mining/scrapper_tool/spiders`
 
-In the second component, the software calls an external API called `Namsor` to analyse the names of the people. The API returns information like gender, ethnicity, etc for the names. This component of software can be located in `/analysis/industry_conferences/industry_conf_analysed_data/analysis.py` and `/analysis/academic_conferences/academic_conf_analysed_data/namsor_analysis.py` for the respective conferences. 
+In the second component, the software calls an external API called `Namsor` to analyse the names of the people. The API returns information like gender, ethnicity, etc for each name in the conference. This component of software can be located in `/analysis/industry_conferences/industry_conf_analysed_data/analysis.py` and `/analysis/academic_conferences/academic_conf_analysed_data/namsor_analysis.py` for the respective conferences. 
 The output is stored in `ethnicity_data.csv`, `gender_data.csv` and `population_data.csv`.
 
 Additionally to limit the number of calls(duplicate calls) to external API, we store the existing information as a dictionary in `extracted.pkl`.
@@ -19,7 +19,7 @@ Additionally to limit the number of calls(duplicate calls) to external API, we s
 A __formal statistical analysis report__ for the respective conferences can also be found in the same respepctive folders.
 
 
-The other files are irrelevant to this project and can be used to extend the code if required to integrate with a specific application.
+The other files are dependencies of this project and offer functionality which can be used to extend the code if required to integrate with a specific application.
 
 
 # How to install
