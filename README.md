@@ -9,7 +9,7 @@ In this research, we will be analysing the __participation of people in the diff
 There are __two components__ to this software. First component of the software is to `crawl` different conference pages, and extract the names of the people who participated in that conference. The data 
 is then exported to a csv file named after the conference. The extracted data from the csv files is feeded to the second component of the software. 
 
-Currently, the software uses only two spider and works perfectly in extracting the names of the people from the domain: __`bigdataieee.org` for the years 2015-2020 and `fitc.ca` for the years 2002-2019.__ The results of the crawler are present in `/data_mining/sample_output`. This component of software itself can be located in `/data_mining/scrapper_tool/spiders`
+Currently, the software uses only two spider and works perfectly in extracting the names of the people from the domain: __`bigdataieee.org`(http://bigdataieee.org/BigData2020/) for the years 2015-2020 and `fitc.ca` (https://fitc.ca/events/speakers/) for the years 2002-2019.__ The results of the crawler are present in `/data_mining/sample_output`. This component of software itself can be located in `/data_mining/scrapper_tool/spiders`
 
 In the second component, the software calls an external API called `Namsor` to analyse the names of the people. The API returns information like gender, ethnicity, etc for the names. This component of software can be located in `/analysis/industry_conferences/industry_conf_analysed_data/analysis.py` and `/analysis/academic_conferences/academic_conf_analysed_data/namsor_analysis.py` for the respective conferences. 
 The output is stored in `ethnicity_data.csv`, `gender_data.csv` and `population_data.csv`.
