@@ -16,6 +16,8 @@ The output is stored in `ethnicity_data.csv`, `gender_data.csv` and `population_
 
 Additionally to limit the number of calls(duplicate calls) to external API, we store the existing information as a dictionary in `extracted.pkl`.
 
+A formal statistical analysis report for the respective conferences can also be found in the same respepctive folders.
+
 
 The other files are irrelevant to this project and can be used to extend the code if required to integrate with a specific application.
 
