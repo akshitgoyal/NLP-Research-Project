@@ -11,7 +11,10 @@ is then exported to a csv file named after the conference. The extracted data fr
 
 Currently, the software uses only two spider and works perfectly in extracting the names of the people from the domain: `bigdataieee.org` for the years 2015-2020 and `fitc.ca` for the years 2002-2019. The results of the crawler are present in `/data_mining/sample_output`. This component of software itself can be located in `/data_mining/scrapper_tool/spiders`
 
-In the second component, the software calls an external API called `Namsor` to analyse the names of the people. The API returns information like gender, ethnicity, etc for the names. This component of software can be located in `/analysis/industry_conferences/industry_conf_analysed_data/analysis.py` and `/analysis/academic_conferences/academic_conf_analysed_data/namsor_analysis.py` for the respective conferences.
+In the second component, the software calls an external API called `Namsor` to analyse the names of the people. The API returns information like gender, ethnicity, etc for the names. This component of software can be located in `/analysis/industry_conferences/industry_conf_analysed_data/analysis.py` and `/analysis/academic_conferences/academic_conf_analysed_data/namsor_analysis.py` for the respective conferences. 
+The output is stored in `ethnicity_data.csv`, `gender_data.csv` and `population_data.csv`.
+
+Additionally to limit the number of calls(duplicate calls) to external API, we store the existing information as a dictionary in `extracted.pkl`.
 
 
 The other files are irrelevant to this project and can be used to extend the code if required to integrate with a specific application.
@@ -28,16 +31,21 @@ For more details on installing scrapy, you can visit the official documentation 
 
 # How to use it
 ## Names Extraction and Data Mining
-Simply navigate to project folder in your command line and make a call to the spider.  Note that we only have two spiders implemented called `people` and `tech`.
-`people` is used for extracting the information from the academic based conference `bigdataieee.org` and `tech` is used for extracting the information from industry based conference `fitc.ca`. 
+Simply navigate to ~/spiders folder in your command line and make a call to the desired spider.  Note that we only have two spiders implemented called `people` and `tech`.
+`people` is used for extracting the information from the academic based conference `bigdataieee.org` and `tech` is used for extracting the information from industry based conference `fitc.ca`.
 
 You can execute it by the command: `scrapy crawl people` and `scrapy crawl tech` in your command line.  
 
 ## NLP and Data Analysis
+Navigate to `~/analysis.py` or `~/namsor_analysis.py` and  run it through the python shell. 
+
+Note: You need to purchase an API key to use the tool. However, there is some small qouta allocated on free accounts. For more details on the usage and installation of this tool, you can visit the official documentation at: https://github.com/namsor/namsor-python-sdk2
+
+
+
 
 # Extend the code
-The crawler can be used as a sample and can be tweaked easily to crawl different pages depending on the requirements. Specifically, for this project we can include another spyder to crawl the confernce years of 2013 and 2014 for the current domain. Also, we can  extract the location and institution names for these individuals.
-Another possible extension to this specific project could be extracting data in a different domain in big data conferences.
+The crawler can be used as a sample and can be tweaked easily to crawl different pages depending on the requirements. Specifically, for this project we can also extract the location and institution names for the people attending these conferences to analyse better.
 
 
 # License Information
