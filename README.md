@@ -2,7 +2,7 @@
 
 A web crawler built using a popular tool called `Scrapy`. 
 
-This software is built as a part of __`independent study course` under the guidance of Professor Andrew Petersen at University of Toronto Mississauga.__
+We all are aware of the issue of inadequate representation of certain groups or minorities in various walks of life. Therefore, through this research we will try to analyse the representation in computer science community.
 
 In this research, we will be analysing the __participation of people in the different conferences__. Specifically, we will be looking at the people in academic conferences and industry conferences.
 
